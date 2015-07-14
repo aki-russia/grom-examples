@@ -1,0 +1,13 @@
+{
+  "name": "grom-examples-less",
+  "version": "0.0.0",
+  "description": "grom.js less example",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Dmitriy Kharchenko",
+  "license": "ISC",
+  "dependencies": {
+    "co": "^4.6.0"
+  }
+}
