@@ -3,10 +3,13 @@ var R = require('ramda')
 var co = require('co')
 
 var renderLess = co.wrap(function* (file){
-  var css = (yield less.render(file.toString(), {})).css
-  file = file.new(css)
-  file.ext('.css')
-  return file
+  var css = (yield less.render(yield file.source(), {})).css
+  try{
+    file.new({ext: '.css'}, css)
+  } catch (e) {
+    console.log(e)
+  }
+  return file.new({ext: '.css'}, css)
 })
 
 module.exports['compile-less'] = function* (){
